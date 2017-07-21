@@ -5,7 +5,7 @@ import './index.css';
 const sp = ' ';
 
 function Square(props) {
-  var classnames = 'square' + sp + (props.xMove ? 'cursor-x' : 'cursor-o') + sp + (props.winningLine.filter((v) => v === props.index).length > 0 ? 'winner' : '');
+  let classnames = 'square' + sp + (props.xMove ? 'cursor-x' : 'cursor-o') + sp + (props.winningLine.filter((v) => v === props.index).length > 0 ? 'winner' : '');
   return (
     <button className={classnames} onClick={props.onClick}>
       {props.value}
@@ -18,6 +18,7 @@ class Board extends React.Component {
   renderSquare(i) {
     return (
       <Square
+        key={i}
         index={i}
         xMove={this.props.xMove}
         winningLine={this.props.winningLine}
@@ -28,17 +29,17 @@ class Board extends React.Component {
   }
 
   render() {
-    var r = 0, boardrows = [];
-    for (var i=0; i<3; i++) {
-      var squares = [];
-      for (var j=0; j<3; j++) {
+    let r = 0, boardrows = [];
+    for (let i=0; i<3; i++) {
+      let squares = [];
+      for (let j=0; j<3; j++) {
         squares.push(
             this.renderSquare(r)
         );
         r++;
       }
       boardrows.push(
-        <div className="board-row">
+        <div key={i} className="board-row">
           {squares}
         </div>
       );
@@ -141,7 +142,7 @@ class Game extends React.Component {
 
     if (moves.length > 1) {
       if (this.state.sortAscending) {
-        moves.sort();
+        moves.sort(function(a,b){ return parseInt(a.key)  - parseInt(b.key);});
       } else {
         moves.reverse();
       }
@@ -214,8 +215,8 @@ function calculateWinner(squares) {
 
 function coord(x) {
   if (x !== null) {
-    var i = (x === 0 ? 0 : (x % 3)) + 1;
-    var j = (Number.parseInt(x / 3, 10)) + 1;
+    let i = (x === 0 ? 0 : (x % 3)) + 1;
+    let j = (Number.parseInt(x / 3, 10)) + 1;
     return '(' + i + ', ' + j +  ')';
   }
   return null;
@@ -232,7 +233,12 @@ function diff(a, b) {
   return {'index': -1, 'value': null};
 }
 
-// Polyfill - Compatibility - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill#Polyfill
+// Polyfill - [ParseInt Compatibility] - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt
+if (!Number.parseInt) {
+  Number.parseInt = parseInt;
+}
+
+// Polyfill - [Fill Compatibility] - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill#Polyfill
 if (!Array.prototype.fill) {
   Object.defineProperty(Array.prototype, 'fill', {
     value: function(value) {
