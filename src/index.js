@@ -142,7 +142,7 @@ class Game extends React.Component {
 
     if (moves.length > 1) {
       if (this.state.sortAscending) {
-        moves.sort(function(a,b){ return parseInt(a.key)  - parseInt(b.key);});
+        moves.sort(function(a,b){ return parseInt(a.key) - parseInt(b.key);});
       } else {
         moves.reverse();
       }
