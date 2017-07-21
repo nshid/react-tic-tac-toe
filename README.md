@@ -3,7 +3,7 @@ This is sample React application from [React tutorial](https://facebook.github.i
 
 ## To use
 
-Install the latest version of [NodeJS](https://nodejs.org/en/) to create a new project. Delete all files in the "src" folder and replace with source files from this project. Run the server locally on port 3000. Execute the following commands via terminal:
+Install the latest version of [NodeJS](https://nodejs.org/en/) to create a new project. Delete all files in the "src" and "public" folders and replace with source files from this project. Run the server locally on port 3000. Execute the following commands via terminal:
 
 ### Node
 
