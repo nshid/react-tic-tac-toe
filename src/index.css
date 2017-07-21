@@ -1,0 +1,122 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.restart {
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.inherit {
+  visibility: inherit;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.winner {
+  background-color: hsla(60, 96%, 79%, .95);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-info {
+  margin-left: 0px;
+}
+
+.game-option-restart {
+  margin-bottom: 20px;
+}
+
+.game-option-toggle {
+  margin-top: 20px;
+}
+
+.game-status {
+  margin-bottom: 20px;
+}
+
+.lightblue {
+  background-color: lightblue;
+}
+
+.lightblue:hover {
+  box-shadow: 1px 1px 1px 1px lightblue;
+}
+
+.lightgreen {
+  background-color: lightgreen;
+}
+
+.lightgreen:hover {
+  box-shadow: 1px 1px 1px 1px lightgreen;
+}
+
+.lightred {
+  background-color: hsla(0, 100%, 50%, .5);
+}
+
+.lightred:hover {
+  box-shadow: 1px 1px 1px 1px hsla(0, 100%, 50%, .5);
+}
+
+.cursor-hand:hover {
+    cursor: pointer;
+}
+
+.cursor-o:hover {
+  cursor:  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAD3SURBVHjatFXBEYMwDNODaRjBU3QKD9EpvERX8DJ5eBT10XI04JC0hYc+XCI7spBBEi24IgAwh9LJ+eh+8tFnBQIreIAAEOq898ld7wOEeRH1aJO3iaOBboGtFLsLYuWxf3KZTNIi1fn24MSikNPRwFjsJrsCGsug8wMjxLWcVWNL9ygmGymEVngbIq4l2jUH1x/k6HavdJIwyZ/0FV7Sbl9PKE4gf7mt4lFPyFt/2ynkp3Z+qeYXuSWcnK/x+TtjLvlDF1P8ly1Zkn7c66Zibs1qoTTPn5rnW6cNROjYJsosjM4iGNiha34PkK8oJo8msRh7A38OABAPUgDENfMPAAAAAElFTkSuQmCC), url('./images/o-cursor.cur'), cell !important;
+}
+
+.cursor-x:hover {
+  cursor:  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAD6SURBVHjanFXBkQMxCNMj1aQEqkgVFLFV0ERacDM8XIrusbMTnxfHunvwMgiDJBtkMgwEQFgwyQdJqJFh76GWyLAT7ApvXQZsfgDoV623ChDo3nhswTJeNoABoEXWB4D1SL7WgO3pi5ry6md4b+TzDpaPsDn3M9W83N+JFn0mqfkdzCLf1zk2yRyTy6YTifo41VqKCcSFV1HvWJaEqgJZtKpOv4q3ImnnpJ1HyxuOzGuA63G3Y/+DkO/EKJI5b1M2uktH9uhyFZO4ZY/eHtQF87JHd5NczaF6VN01XPSopAYLToC7l3qjVwuCzTl8MsdffrwBlIAxkvwZAIKs2RvOZayWAAAAAElFTkSuQmCC), url('./images/x-cursor.cur'), cell !important;
+}
