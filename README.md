@@ -15,4 +15,4 @@ cd tictactoe
 npm start
 ```
 
-Visit <http://localhost:3000/> in your browser.
+Visit <http://localhost:3000/> in your browser or check out the [demo](https://codepen.io/nshid/pen/MvKeXa).
